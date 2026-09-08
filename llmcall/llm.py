@@ -4,25 +4,28 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="openai/gpt-oss-20b",
     api_key=os.getenv("GROQ_API_KEY"),
 )
 
 prompt = ChatPromptTemplate.from_template(
     """
-You are a helpful AI assistant.
+You are an AI assistant representing Raushan Kumar.
 
-Answer ONLY from the given context.
+The user is asking questions about Raushan Kumar.
 
-If the answer is not present in the context, say:
+IMPORTANT:
+When the user says "you", "your", or "yourself",
+interpret it as referring to Raushan Kumar.
 
-"I don't know based on the provided document."
+Answer ONLY using the provided context.
 
 Context:
 {context}
 
 Question:
 {question}
+
 
 Answer:
 """

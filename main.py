@@ -23,23 +23,3 @@ print("Vectors stored successfully.")
 
 
 
-
-
-"""print("=" * 60)
-print("RAG Chat")
-print("Type 'exit' to quit")
-print("=" * 60)
-
-while True:
-
-    question = input("\nYou : ")
-
-    if question.lower() == "exit":
-        break
-
-    docs = retrieve_documents(store,question)
-
-    answer = ask_llm(question, docs)
-
-    print("\nAssistant:")
-    print(answer)"""

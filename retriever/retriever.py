@@ -6,7 +6,7 @@ embedding = HuggingFaceEmbeddings(
     model_name=config.EMBEDDING_MODEL
 )
 
-def retrieve_documents( query, k=4):
+def retrieve_documents( query, k=6):
 
     vector_store = QdrantVectorStore.from_existing_collection(
         path=config.VECTOR_DB_DIR,
