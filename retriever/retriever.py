@@ -2,11 +2,12 @@ from langchain_qdrant import QdrantVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
 import config.config as config
 
-embedding = HuggingFaceEmbeddings(
-    model_name=config.EMBEDDING_MODEL
-)
 
-def retrieve_documents( query, k=6):
+def retrieve_documents(query, k=6):
+
+    embedding = HuggingFaceEmbeddings(
+        model_name=config.EMBEDDING_MODEL
+    )
 
     vector_store = QdrantVectorStore.from_existing_collection(
         path=config.VECTOR_DB_DIR,
