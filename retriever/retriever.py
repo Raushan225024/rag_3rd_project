@@ -3,11 +3,13 @@ from langchain_huggingface import HuggingFaceEmbeddings
 import config.config as config
 
 
-def retrieve_documents(query, k=6):
+# Load model only ONCE when the application starts
+embedding = HuggingFaceEmbeddings(
+    model_name=config.EMBEDDING_MODEL
+)
 
-    embedding = HuggingFaceEmbeddings(
-        model_name=config.EMBEDDING_MODEL
-    )
+
+def retrieve_documents(query, k=6):
 
     vector_store = QdrantVectorStore.from_existing_collection(
         path=config.VECTOR_DB_DIR,
