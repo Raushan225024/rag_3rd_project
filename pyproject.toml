@@ -9,8 +9,9 @@ dependencies =   [
     "uvicorn",
     "langchain-groq",
     "langchain-core",
-     "python-dotenv",
+    "python-dotenv",
     "langchain-qdrant",
     "langchain-huggingface",
     "sentence-transformers",
+    "grpcio>=1.83.0",
 ]
